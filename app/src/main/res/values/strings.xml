@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">3Pics2Tries</string>
+    <string name="next_button">Next>></string>
+    <string name="correct">Correct</string>
+    <string name="incorrect">Incorrect</string>
+    <string name="question">Select the option below which describes the pictures best</string>
+    <string name="game_score_string">Score: %1$d</string>
+    <string name="high_score_string">High Score: %1$d</string>
+    <string name="game_over">Game Over</string>
+    <!--<string name="android_quiz">Android Quiz</string>-->
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="pref_theme_key" translatable="false">dark</string>
+    <string name="display_pref">Display Preferences</string>
+    <string name="settings">Settings</string>
+    <string name="start">Start</string>
+    <string name="help">How to play</string>
+    <string name="exit">Exit</string>
+    <string name="download_error">Download Error</string>
+
+</resources>
