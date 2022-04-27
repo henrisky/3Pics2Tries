@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
                             int gameScore = 0;
                             if (intent != null) {
-                                gameScore = intent.getIntExtra("score", 0);
+                                gameScore = intent.getIntExtra("newScore", 0);
                             }
 
                             //update high score and related TextView

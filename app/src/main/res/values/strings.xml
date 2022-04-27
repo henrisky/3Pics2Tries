@@ -16,5 +16,12 @@
     <string name="help">How to play</string>
     <string name="exit">Exit</string>
     <string name="download_error">Download Error</string>
+    <string name="what_word_best_describes_the_images_below">What word best describes the images below?</string>
+
+    <!-- HINTS -->
+    <string name="hint1">Hint one</string>
+    <string name="hint2">Hint two</string>
+    <string name="hint3">Hint three</string>
+    <string name="check">Check</string>
 
 </resources>

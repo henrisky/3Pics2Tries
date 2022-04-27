@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "895663728137",
+    "project_id": "mobileappsfinal-fa9ce",
+    "storage_bucket": "mobileappsfinal-fa9ce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:895663728137:android:c8317bcf40ea7868d47ad8",
+        "android_client_info": {
+          "package_name": "edu.lewisu.cs.yasirtahir.a3pics2tries"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "895663728137-nkkr8a85ujillj9ldq0nskotgbto49qq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlhqiSAJKkdYijjNHcOszM9ZZI8x4b_P4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "895663728137-nkkr8a85ujillj9ldq0nskotgbto49qq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
