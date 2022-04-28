@@ -70,5 +70,10 @@ public class MainActivity extends AppCompatActivity {
             startForResult.launch(gameIntent);
         });
 
+        Button exitButton = findViewById(R.id.exitButton);
+        exitButton.setOnClickListener(view -> {
+            finish();
+        });
+
     }
 }
