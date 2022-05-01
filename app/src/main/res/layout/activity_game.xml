@@ -11,13 +11,13 @@
         android:orientation="horizontal"
         android:layout_marginTop="10dp">
         <TextView
-            android:id="@+id/lifetimeScoreTextView"
+            android:id="@+id/highScoreTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="@color/blue_50"
             android:layout_margin="5dp"
             android:layout_gravity="start"
-            tools:text="Lifetime Score: 1"
+            tools:text="High Score: 1"
             android:layout_weight="1"
             />
         <TextView

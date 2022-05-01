@@ -30,7 +30,7 @@ import java.util.Map;
 
 public class GameActivity extends android.app.Activity{
     private TextView gameScoreTextView;
-    private TextView lifetimeScoreTextView;
+    private TextView highScoreTextView;
     private Button nextButton;
     private Button gameOverButton;
     private TextView questionTextView;
@@ -44,7 +44,7 @@ public class GameActivity extends android.app.Activity{
 
     private int currentIndex = 0;
     private int score;
-    private int lifetimeScore;
+    private int highScore;
     private int userTries = 0;
     private Map<String, Object> tableImgData;
     private Map<String, Object> tableHintsData;
@@ -243,10 +243,10 @@ public class GameActivity extends android.app.Activity{
         // End Of Database Portion
 
         gameScoreTextView = findViewById(R.id.gameScoreTextView);
-        lifetimeScoreTextView = findViewById(R.id.lifetimeScoreTextView);
+        highScoreTextView = findViewById(R.id.highScoreTextView);
 
         Intent sender = getIntent();
-        lifetimeScore = sender.getIntExtra("High Score",0);
+        highScore = sender.getIntExtra("High Score",0);
 
         nextButton = findViewById(R.id.nextButton);
         nextButton.setOnClickListener(new nextButtonClickListener());
@@ -295,8 +295,8 @@ public class GameActivity extends android.app.Activity{
     private void updateScore(){
         String scoreString = getResources().getString(R.string.game_score_string, score);
         gameScoreTextView.setText(scoreString);
-        scoreString = getResources().getString(R.string.high_score_string, lifetimeScore);
-        lifetimeScoreTextView.setText(scoreString);
+        scoreString = getResources().getString(R.string.high_score_string, highScore);
+        highScoreTextView.setText(scoreString);
     }
 
     private void checkAnswer(String userGuess){
@@ -309,7 +309,6 @@ public class GameActivity extends android.app.Activity{
             answerTextView.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.green_700));
             answerTextView.setText(getResources().getText(R.string.correct));
             score ++;
-            lifetimeScore++;
             userTries = 2;
 
         }else{

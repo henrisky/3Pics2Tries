@@ -3,7 +3,6 @@ package edu.lewisu.cs.yasirtahir.a3pics2tries;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.preference.SwitchPreference;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +11,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
 import androidx.preference.DialogPreference.TargetFragment;
+import androidx.preference.SwitchPreference;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -22,7 +22,7 @@ public class SettingsActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    //.replace(R.id.settings, new SettingsFragment())
+                    .replace(R.id.settings, new SettingsFragment())
                     .commit();
         }
         ActionBar actionBar = getSupportActionBar();
@@ -40,17 +40,18 @@ public class SettingsActivity extends AppCompatActivity {
 
     }
 
-//    public static class SettingsFragment extends PreferenceFragmentCompat {
-//        @Override
-//        public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-//
-//            SwitchPreference themePref = findPreference(getString(R.string.pref_theme_key));
-//            if(themePref != null){
-//                themePref.setOnPreferenceChangeListener((preference, newValue) -> {
-//                    requireActivity().recreate();
-//                    return true;
-//                });
-//            }
-//        }
-//    }
+    public static class SettingsFragment extends PreferenceFragmentCompat {
+        @Override
+        public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+            setPreferencesFromResource(R.xml.theme_preferences, rootKey);
+
+            SwitchPreference themePref = findPreference(getString(R.string.pref_theme_key));
+            if(themePref != null){
+                themePref.setOnPreferenceChangeListener((preference, newValue) -> {
+                    requireActivity().recreate();
+                    return true;
+                });
+            }
+        }
+    }
 }

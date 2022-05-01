@@ -1,9 +1,13 @@
 package edu.lewisu.cs.yasirtahir.a3pics2tries;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -11,10 +15,12 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.preference.PreferenceManager;
 
 public class MainActivity extends AppCompatActivity {
     private int highScore;
@@ -25,16 +31,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        FragmentManager fragmentManager = getSupportFragmentManager();
-//        Fragment fragment = fragmentManager.findFragmentById(R.id.rating_container);
-//
-//        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-//        boolean darkTheme = sharedPreferences.getBoolean(getString(R.string.pref_theme_key), false);
-//        if(darkTheme){
-//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-//        }else{
-//            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-//        }
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        boolean darkTheme = sharedPreferences.getBoolean(getString(R.string.pref_theme_key), false);
+        if(darkTheme){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }else{
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
 
         highScoreTextView = findViewById(R.id.highScoreTextView);
         String scoreString  = getResources().getString(R.string.high_score_string, highScore);
@@ -70,10 +73,62 @@ public class MainActivity extends AppCompatActivity {
             startForResult.launch(gameIntent);
         });
 
-        Button exitButton = findViewById(R.id.exitButton);
-        exitButton.setOnClickListener(view -> {
-            finish();
+        Button helpButton = findViewById(R.id.helpButton);
+        helpButton.setOnClickListener(view -> {
+            Intent helpIntent = new Intent(this, HelpActivity.class);
+            startActivity(helpIntent);
         });
 
+        Button exitButton = findViewById(R.id.exitButton);
+        exitButton.setOnClickListener(view -> {
+            showAlertDialog("Are you sure you want to exit the app?");
+        });
+
+    }
+
+    private void showAlertDialog(String message){
+        AlertDialog dialog = new AlertDialog.Builder(MainActivity.this)
+                .setTitle("Exit?")
+                .setMessage(message)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                }).create();
+        dialog.show();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.options_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.action_settings){
+            //Toast.makeText(getApplicationContext(), item.getTitle(), Toast.LENGTH_SHORT).show();
+            Intent startSettingsActivity = new Intent(this, SettingsActivity.class);
+            startActivity(startSettingsActivity);
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
