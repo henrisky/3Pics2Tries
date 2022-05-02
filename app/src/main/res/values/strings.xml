@@ -13,7 +13,7 @@
     <string name="exit">Exit</string>
 
     <string name="instructions">Instructions</string>
-    <string name="instructions_content">This game is very similar to 4Pics1Word game. In this game you will be shown 10 questions. Questions difficulty level increases as you progress in the game. For each question you will be shown 3 pictures and a blank field below it. You can type your answer in the given field and press check. You will be given 2 tries to guess the right answer as well as hints on the top each time you get the question wrong. Once the game is over you can see your score as well as updated high score on the home page.</string>
+    <string name="instructions_content">This game is very similar to 4Pics1Word game. In this game you will be shown 10 questions. Question difficulty level increases as you progress in the game. For each question you will be shown 3 pictures and a blank field below it. You can type your answer in the given field and press check. You will be given 2 tries to guess the right answer as well as hints on the top each time you get the question wrong. Once the game is over you can see your score as well as an updated high score on the home page.</string>
 
     <string name="next_button">Next>></string>
     <string name="correct">Correct</string>
@@ -47,5 +47,6 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="home">home</string>
 
 </resources>

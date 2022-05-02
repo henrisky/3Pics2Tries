@@ -9,7 +9,8 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:text="@string/instructions"
         android:layout_marginTop="30dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="30dp"
+        android:textColor="@color/blue_50"
         android:layout_gravity="center_horizontal"/>
 
     <TextView
@@ -17,6 +18,19 @@
         android:layout_height="wrap_content"
         android:text="@string/instructions_content"
         android:layout_gravity="left"
+        android:textColor="@color/green_700"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+    <Button
+        android:id="@+id/homeButton"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="20dp"
+        android:padding="30dp"
+        android:text="@string/home"
+        android:textColor="@color/blue_50"
+        android:visibility="visible" />
 
 </LinearLayout>
