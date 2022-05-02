@@ -24,7 +24,9 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.io.InputStream;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -49,6 +51,8 @@ public class GameActivity extends android.app.Activity{
     private Map<String, Object> tableImgData;
     private Map<String, Object> tableHintsData;
     private Map<String, Object> tableAnswersData;
+    private int i = 0;
+    private List<String> locations = Arrays.asList("Statue of liberty", "school", "sharp", "communication", "therapy", "park", "windmill", "club", "country side", "gym");
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -344,11 +348,24 @@ public class GameActivity extends android.app.Activity{
     private class nextButtonClickListener implements View.OnClickListener{
         @Override
         public void onClick(View view) {
+            i++;
             updateQuestion();
             nextButton.setVisibility(View.GONE);
             answerTextView.setVisibility(View.GONE);
             checkButton.setVisibility(View.VISIBLE);
             userText.setText("");
+        }
+    }
+
+    public void showLocation(View view){
+        // Search for restaurants nearby
+        String location = locations.get(i);
+        Uri gmmIntentUri = Uri.parse("geo:0,0?q=" + location);
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+
+        if (mapIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(mapIntent);
         }
     }
 }
