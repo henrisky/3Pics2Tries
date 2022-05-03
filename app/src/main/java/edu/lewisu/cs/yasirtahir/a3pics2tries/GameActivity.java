@@ -355,7 +355,7 @@ public class GameActivity extends AppCompatActivity{
             i++;
             updateQuestion();
             nextButton.setVisibility(View.GONE);
-            answerTextView.setVisibility(View.GONE);
+            answerTextView.setVisibility(View.INVISIBLE);
             checkButton.setVisibility(View.VISIBLE);
             userText.setText("");
         }
