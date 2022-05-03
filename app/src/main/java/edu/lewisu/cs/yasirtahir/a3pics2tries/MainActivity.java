@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -30,14 +31,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        boolean darkTheme = sharedPreferences.getBoolean(getString(R.string.pref_theme_key), false);
-        if(darkTheme){
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        }else{
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        }
 
         highScoreTextView = findViewById(R.id.highScoreTextView);
         String scoreString  = getResources().getString(R.string.high_score_string, highScore);
@@ -129,6 +122,13 @@ public class MainActivity extends AppCompatActivity {
             Intent startSettingsActivity = new Intent(this, SettingsActivity.class);
             startActivity(startSettingsActivity);
         }
+
+        if (id == R.id.helpButton) {
+            startActivity(new Intent(MainActivity.this, HelpActivity.class));
+
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
     }
 }

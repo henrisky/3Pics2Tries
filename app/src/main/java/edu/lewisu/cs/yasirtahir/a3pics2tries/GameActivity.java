@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 
 import com.google.firebase.database.DataSnapshot;
@@ -30,7 +32,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-public class GameActivity extends android.app.Activity{
+public class GameActivity extends AppCompatActivity{
     private TextView gameScoreTextView;
     private TextView highScoreTextView;
     private Button nextButton;
@@ -58,6 +60,7 @@ public class GameActivity extends android.app.Activity{
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+
 
         questions = new Question[]{
                 new Question("", "",

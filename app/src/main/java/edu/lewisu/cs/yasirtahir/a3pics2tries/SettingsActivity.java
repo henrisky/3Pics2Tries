@@ -2,6 +2,7 @@ package edu.lewisu.cs.yasirtahir.a3pics2tries;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 
 import androidx.appcompat.app.ActionBar;
