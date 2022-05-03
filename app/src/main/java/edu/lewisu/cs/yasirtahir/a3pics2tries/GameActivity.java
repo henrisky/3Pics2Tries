@@ -139,25 +139,25 @@ public class GameActivity extends android.app.Activity{
                 questions[2].setImageId2(imgStr8);
                 questions[2].setImageId3(imgStr9);
                 questions[3].setImageId1(imgStr10);
-                questions[3].setImageId2(imgStr11);
-                questions[3].setImageId3(imgStr12);
+                questions[3].setImageId2(imgStr12);
+                questions[3].setImageId3(imgStr11);
                 questions[4].setImageId1(imgStr13);
-                questions[4].setImageId2(imgStr14);
-                questions[4].setImageId3(imgStr15);
+                questions[4].setImageId2(imgStr15);
+                questions[4].setImageId3(imgStr14);
                 questions[5].setImageId1(imgStr16);
                 questions[5].setImageId2(imgStr17);
                 questions[5].setImageId3(imgStr18);
                 questions[6].setImageId1(imgStr19);
-                questions[6].setImageId2(imgStr20);
-                questions[6].setImageId3(imgStr21);
-                questions[7].setImageId1(imgStr22);
-                questions[7].setImageId2(imgStr23);
+                questions[6].setImageId2(imgStr21);
+                questions[6].setImageId3(imgStr20);
+                questions[7].setImageId1(imgStr23);
+                questions[7].setImageId2(imgStr22);
                 questions[7].setImageId3(imgStr24);
-                questions[8].setImageId1(imgStr25);
-                questions[8].setImageId2(imgStr26);
+                questions[8].setImageId1(imgStr26);
+                questions[8].setImageId2(imgStr25);
                 questions[8].setImageId3(imgStr27);
-                questions[9].setImageId1(imgStr28);
-                questions[9].setImageId2(imgStr29);
+                questions[9].setImageId1(imgStr29);
+                questions[9].setImageId2(imgStr28);
                 questions[9].setImageId3(imgStr30);
             }
 
