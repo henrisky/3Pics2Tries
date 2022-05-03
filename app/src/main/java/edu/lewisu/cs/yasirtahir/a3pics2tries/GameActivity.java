@@ -323,6 +323,7 @@ public class GameActivity extends AppCompatActivity{
             answerTextView.setText(getResources().getText(R.string.incorrect));
             userTries +=1;
             questionTextView.setText("Hint: "+ questions[currentIndex].getHint() + ". Try again.");
+            checkButton.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.green_700));
         }
 
         updateScore();
